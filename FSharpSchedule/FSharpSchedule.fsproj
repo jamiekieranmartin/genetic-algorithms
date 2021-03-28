@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="FSharpVersion.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeneticAlgorithm\GeneticAlgorithm.fsproj" />
+    <ProjectReference Include="..\RandomMonad\RandomMonad.fsproj" />
+    <ProjectReference Include="..\ScheduleModel\ScheduleModel.fsproj" />
+  </ItemGroup>
+
+</Project>

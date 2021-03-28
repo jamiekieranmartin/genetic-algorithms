@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI.Fody" Version="13.1.1" />
+    <PackageReference Include="ReactiveUI.WPF" Version="13.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSharpSchedule\CSharpGeneticAlgorithm.csproj" />
+    <ProjectReference Include="..\GeneticAlgorithm\FSharpGeneticAlgorithm.fsproj" />
+    <ProjectReference Include="..\TSPModel\TSPModel.fsproj" />
+  </ItemGroup>
+
+</Project>

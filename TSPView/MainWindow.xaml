@@ -1,0 +1,57 @@
+﻿<reactiveui:ReactiveWindow 
+    x:Class="TSPView.MainWindow"
+    x:TypeArguments="local:AppViewModel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:TSPView"
+    xmlns:reactiveui="http://reactiveui.net"
+    Title="TSP Browser" Height="900" Width="900" WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <DockPanel>
+        <Menu x:Name="Menu" DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" x:Name="New"/>
+                <Separator/>
+                <MenuItem Header="Exit" Click="MenuItem_Exit"/>
+            </MenuItem>
+            <MenuItem Header="Genetic Algorithm">
+                <MenuItem Header="F# version" Name="FSharp"/>
+                <MenuItem Header="C# version" Name="CSharp"/>
+            </MenuItem>
+            <Label x:Name="SolutionStatus"/>
+        </Menu>
+        <ItemsControl  x:Name="BestTour" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Line X1="{Binding From.x}" Y1="{Binding From.y}" X2="{Binding To.x}" Y2="{Binding To.y}" Stroke="Red"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl x:Name="Locations" Panel.ZIndex="1000">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Ellipse Width="{Binding Width}" Height="{Binding Height}" Fill="Blue"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Canvas.Left" Value="{Binding Left}" />
+                    <Setter Property="Canvas.Top" Value="{Binding Top}" />
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+        </ItemsControl>
+
+    </DockPanel>
+</reactiveui:ReactiveWindow>

@@ -1,0 +1,81 @@
+U06B,Vortex,9,field
+U06B,70m Sprint,1,track
+U06B,200m Sprint,2,track
+U06G,Vortex,11,field
+U06G,70m Sprint,1,track
+U06G,200m Sprint,2,track
+U07B,Long Jump,15,pit
+U07B,Shot Put,17,shotput
+U07B,70m Sprint,1,track
+U07G,Long Jump,22,pit
+U07G,Shot Put,26,shotput
+U07G,70m Sprint,1,track
+U08G,Long Jump,15,pit
+U08G,Discus,22,discus
+U08G,70m Sprint,1,track
+U08G,300m Walk,3,track
+U08B,High Jump (scissors),52,scissors
+U08B,Shot Put,17,shotput
+U08B,70m Sprint,1,track
+U08B,300m Walk,3,track
+U09G,High Jump (scissors),71,scissors
+U09G,Discus,33,discus
+U09G,70m Sprint,1,track
+U09G,300m Walk,3,track
+U09B,Long Jump,13,pit
+U09B,Turbo Jav,13,field
+U09B,70m Sprint,1,track
+U09B,300m Walk,3,track
+U10G,Long Jump,20,pit
+U10G,Turbo Jav,22,field
+U10G,70m Sprint,1,track
+U10G,700m Walk,5,track
+U10B,High Jump (scissors),34,scissors
+U10B,Shot Put,13,shotput
+U10B,70m Sprint,1,track
+U10B,700m Walk,5,track
+U11G,Long Jump,22,pit
+U11G,Discus,29,discus
+U11G,70m Sprint,1,track
+U11G,200m Sprint,2,track
+U11G,700m Walk,5,track
+U11B,Long Jump,26,pit
+U11B,Javelin,47,javelin
+U11B,70m Sprint,1,track
+U11B,200m Sprint,2,track
+U11B,700m Walk,5,track
+U12G,High Jump,51,flop
+U12G,Shot Put,21,shotput
+U12G,70m Sprint,1,track
+U12G,200m Sprint,2,track
+U12G,700m Walk,5,track
+U12B,Long Jump,18,pit
+U12B,Discus,24,discus
+U12B,70m Sprint,1,track
+U12B,200m Sprint,2,track
+U12B,700m Walk,5,track
+U13G,High Jump,40,flop
+U13G,Shot Put,17,shotput
+U13G,70m Sprint,1,track
+U13G,200m Sprint,1,track
+U13G,700m Walk,5,track
+U13-14B,Triple Jump,19,pit
+U13-14B,Discus,22,discus
+U13-14B,70m Sprint,1,track
+U13-14B,200m Sprint,2,track
+U13-14B,700m Walk,5,track
+U14G,High Jump,45,flop
+U14G,Shot Put,19,shotput
+U14G,70m Sprint,1,track
+U14G,200m Sprint,1,track
+U14G,700m Walk,5,track
+U15-17B,Triple Jump,17,pit
+U15-17B,Javelin,29,javelin
+U15-17B,70m Sprint,1,track
+U15-17B,200m Sprint,1,track
+U15-17B,700m Walk,5,track
+U15-17G,Triple Jump,21,pit
+U15-17G,Javelin,36,javelin
+U15-17G,70m Sprint,1,track
+U15-17G,200m Sprint,2,track
+U15-17G,700m Walk,5,track

@@ -1,0 +1,81 @@
+U06B,100m Sprint,1,track
+U06B,200m Sprint,2,track
+U06G,100m Sprint,1,track
+U06G,200m Sprint,2,track
+U07B,100m Sprint,1,track
+U07B,200m Sprint,2,track
+U07G,100m Sprint,2,track
+U07G,200m Sprint,3,track
+U08B,100m Sprint,1,track
+U08B,200m Sprint,2,track
+U08G,100m Sprint,1,track
+U08G,200m Sprint,2,track
+U11B,100m Sprint,2,track
+U11B,200m Sprint,2,track
+U11G,100m Sprint,2,track
+U11G,200m Sprint,2,track
+U12B,100m Sprint,2,track
+U12B,200m Sprint,2,track
+U12G,100m Sprint,2,track
+U12G,200m Sprint,2,track
+U13-14B,100m Sprint,2,track
+U13-14B,200m Sprint,2,track
+U13G,100m Sprint,1,track
+U13G,200m Sprint,1,track
+U14G,100m Sprint,1,track
+U14G,200m Sprint,1,track
+U15-17B,100m Sprint,1,track
+U15-17B,200m Sprint,1,track
+U15-17G,100m Sprint,1,track
+U15-17G,200m Sprint,2,track
+U09B,400m Run,2,track
+U09G,400m Run,4,track
+U10B,400m Run,2,track
+U10G,400m Run,4,track
+U11B,400m Run,4,track
+U11G,400m Run,4,track
+U12B,400m Run,2,track
+U12G,400m Run,2,track
+U13-14B,400m Run,2,track
+U13G,400m Run,2,track
+U14G,400m Run,2,track
+U15-17B,400m Run,2,track
+U15-17G,400m Run,2,track
+U09B,100m Sprint,1,track
+U09G,100m Sprint,2,track
+U10B,100m Sprint,1,track
+U10G,100m Sprint,2,track
+U06B,Shot Put,11,shotput
+U06G,Shot Put,13,shotput
+U07B,Vortex,15,field
+U07G,Vortex,22,field
+U08G,High Jump (scissors),52,scissors
+U08G,Shot Put,15,shotput
+U08B,Long Jump,15,pit
+U08B,Vortex,15,field
+U09G,High Jump (scissors),71,scissors
+U09G,Turbo Jav,22,field
+U09B,Long Jump,13,pit
+U09B,Shot Put,15,shotput
+U10G,Long Jump,20,pit
+U10G,Discus,27,discus
+U10B,High Jump (scissors),34,scissors
+U10B,Discus,15,discus
+U11B,High Jump,62,flop
+U11B,Shot Put,30,shotput
+U11G,High Jump,68,flop
+U11G,Shot Put,26,shotput
+U12G,Triple Jump,21,pit
+U12G,Discus,24,discus
+U12B,Triple Jump,19,pit
+U12B,Shot Put,21,shotput
+U13G,Long Jump,15,pit
+U13G,Javelin,29,javelin
+U13-14B,High Jump,45,flop
+U13-14B,Shot Put,19,shotput
+U14G,Long Jump,13,pit
+U14G,Javelin,33,javelin
+U15-17B,High Jump,45,flop
+U15-17B,Discus,20,discus
+U15-17G,High Jump,40,flop
+U15-17G,Discus,24,discus

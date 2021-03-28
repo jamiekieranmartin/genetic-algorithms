@@ -1,0 +1,81 @@
+U06B,Long Jump,9,pit
+U06B,Shot Put,11,shotput
+U06G,Long Jump,11,pit
+U06G,Shot Put,13,shotput
+U07B,Vortex,15,field
+U07B,60m Hurdles (30cm),1,track
+U07B,100m Sprint,1,track
+U07G,Vortex,22,field
+U07G,60m Hurdles (30cm),2,track
+U07G,100m Sprint,2,track
+U06B,60m Hurdles (20cm),1,track
+U06G,60m Hurdles (20cm),1,track
+U08G,High Jump (scissors),52,scissors
+U08G,Shot Put,15,shotput
+U08G,60m Hurdles (45cm),1,track
+U08G,100m Sprint,1,track
+U08B,Long Jump,15,pit
+U08B,Discus,22,discus
+U08B,60m Hurdles (45cm),1,track
+U08B,100m Sprint,1,track
+U09G,Long Jump,22,pit
+U09G,Turbo Jav,22,field
+U09G,60m Hurdles (45cm),2,track
+U09G,100m Sprint,2,track
+U09B,High Jump (scissors),45,scissors
+U09B,Shot Put,15,shotput
+U09B,60m Hurdles (45cm),1,track
+U09B,100m Sprint,1,track
+U10G,High Jump (scissors),62,scissors
+U10G,Shot Put,24,shotput
+U10G,60m Hurdles (60cm),2,track
+U10G,100m Sprint,2,track
+U10B,Long Jump,11,pit
+U10B,Turbo Jav,12,field
+U10B,60m Hurdles (60cm),1,track
+U10B,100m Sprint,1,track
+U11G,Triple Jump,26,pit
+U11G,Javelin,36,javelin
+U11G,800m Run,3,track
+U11G,80m Hurdles (60cm),2,track
+U11G,100m Sprint,2,track
+U11B,Triple Jump,28,pit
+U11B,Discus,34,discus
+U11B,800m Run,3,track
+U11B,80m Hurdles (60cm),2,track
+U11B,100m Sprint,2,track
+U12G,Long Jump,18,pit
+U12G,Javelin,36,javelin
+U12G,800m Run,3,track
+U12G,80m Hurdles (68cm),2,track
+U12G,100m Sprint,2,track
+U12B,High Jump,56,flop
+U12B,Shot Put,21,shotput
+U12B,800m Run,3,track
+U12B,80m Hurdles (68cm),2,track
+U12B,100m Sprint,2,track
+U13G,Triple Jump,15,pit
+U13G,Discus,20,discus
+U13G,800m Run,3,track
+U13G,200m Hurdles (68cm),2,track
+U13G,100m Sprint,1,track
+U13-14B,High Jump,45,flop
+U13-14B,Shot Put,19,shotput
+U13-14B,800m Run,3,track
+U13-14B,200m Hurdles (68cm),4,track
+U13-14B,100m Sprint,2,track
+U14G,Triple Jump,19,pit
+U14G,Javelin,33,javelin
+U14G,800m Run,3,track
+U14G,200m Hurdles (76cm),2,track
+U14G,100m Sprint,1,track
+U15-17B,High Jump,45,flop
+U15-17B,Shot Put,17,shotput
+U15-17B,800m Run,3,track
+U15-17B,300m Hurdles (76cm),3,track
+U15-17B,100m Sprint,1,track
+U15-17G,High Jump,40,flop
+U15-17G,Shot Put,21,shotput
+U15-17G,800m Run,3,track
+U15-17G,300m Hurdles (76cm),5,track
+U15-17G,100m Sprint,1,track
