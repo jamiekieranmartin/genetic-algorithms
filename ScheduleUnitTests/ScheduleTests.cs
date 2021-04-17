@@ -21,11 +21,12 @@ namespace ScheduleUnitTests
             {
                 time.Start();
                 var result = Schedule.schedule(TestData.events, TestData.priorities0);
+                AssertAreEqual(TestData.result0, result);
                 time.Stop();
             }
             var elapsed = time.ElapsedMilliseconds;
 
-            //AssertAreEqual(TestData.result0, result);
+            
         }
 
         [TestMethod]

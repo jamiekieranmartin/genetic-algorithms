@@ -30,7 +30,7 @@ let tournamentSelect (population: Population) : Rand<Individual> =
     rand {
         let! (a,aScore) = chooseRandom population
         let! (b,bScore) = chooseRandom population
-        if aScore > bScore then return a else return b
+        if aScore >= bScore then return a else return b
     }
 
 // Combine the genes of parent1 and parent2 based on the given splitPoint 
@@ -88,13 +88,10 @@ let reverseMutateAt (genes: Individual) (firstIndex: int) (secondIndex: int): In
 let reverseMutate (chromosome: Individual): Rand<Individual> =
     rand {
         let! idx1 = intRange 0 (chromosome.Length - 1)
-
-        // TODO: Possible extra RNG call here, can easily determine if it needs to be called by using idx1 = chromosome.Length - 2
         let! idx2 = intRange (idx1 + 1) (chromosome.Length)
-        // let! idx2 = if idx1 = (chromosome.Length - 2) then rand.Return(chromosome.Length - 1) else (intRange (idx1 + 1) (chromosome.Length))
 
         return reverseMutateAt chromosome idx1 idx2
-   }
+    }
 
 let MutateProbability = 0.15
 
@@ -135,9 +132,7 @@ let procreate fitnessFunction (population: Population) : Rand<ScoredIndividual> 
     rand {
         let! x = tournamentSelect population
         let! y = tournamentSelect population
-        // let! (x,xScore) = chooseRandom population
-        // let! (y,yScore) = chooseRandom population
-        
+
         let! individual = cross x y
         let! mutated = possiblyMutate individual
         return score fitnessFunction mutated   
@@ -158,9 +153,8 @@ let evolveOneGeneration fitnessFunction (parentPopulation: Population) (childPop
 // For each population, we determine the fitest individual from that generation and return an infinite sequence of these individuals.
 // Due to elitism selection, the fitest individual in each succcessive generation should be at least as good as the previous generation. 
 let evolveForever fitnessFunction (initialPopulation: Population) (childPopulationLimit: int): Rand<ScoredIndividual seq> =
-    randSeqUnfold (fun p -> 
-        let population = evolveOneGeneration fitnessFunction p childPopulationLimit
-        (fitest p, population)
+    randSeqUnfold (fun population -> 
+        (fitest population, (evolveOneGeneration fitnessFunction population childPopulationLimit))
     ) initialPopulation
 
 let Optimize fitnessFunction numberOfGenes numerOfIndividuals: ScoredIndividual seq =

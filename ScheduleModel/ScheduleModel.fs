@@ -38,7 +38,24 @@ let resourceAvailable (resource: Resource) : int =
 // (startTime <= t < startTime + event.duration) i.e. That age group cannot be simultaneous doing some other event 
 // nor can that particular allocated resource be used by any other event during that period.
 let earliestStart (alreadyScheduledEvents: ScheduledEvent list) (nextEvent:Event): (Time * Allocation) =
-    // TODO: add correct implementation here 
+    // returns true if the event overlaps the given time
+    let overlaps(scheduledEvent: ScheduledEvent) (time: Time) =
+        (scheduledEvent.startTime < time + nextEvent.duration) && time < (scheduledEvent.finishTime)
+
+    // returns scheduled events that clashes with the
+    let ageGroupClashes(time: Time): bool = 
+        alreadyScheduledEvents
+        |> List.filter (fun event -> (event.event.ageGroup = nextEvent.ageGroup) && overlaps event time)
+        |> List.isEmpty
+
+    let resourceClashes(time: Time): ScheduledEvent list =
+        alreadyScheduledEvents
+        |> List.filter (fun event -> (event.event.location = nextEvent.location) && overlaps event time)
+
+    let allocations(time: Time) =
+        resourceClashes time
+        |> List.map (fun event -> event.allocated)
+        |> List.distinct
 
     // In searching for the earliest possible start time, we don't need to consider every possible integer start time.
     // We know that the earliest possible start time will always be either 0 (i.e. the very start of the competition) 
@@ -52,8 +69,11 @@ let earliestStart (alreadyScheduledEvents: ScheduledEvent list) (nextEvent:Event
     // This makes the algorithm much faster as we only need to consider up to 5 possible start times, 
     // rather than up to 41 if every possible start point needed to be considered.
     let possibleStartTimes: Time list = 
-        // TODO: add correct implementation here
-        raise (System.NotImplementedException "possibleStartTimes")
+        alreadyScheduledEvents
+        |> List.map (fun event -> event.finishTime)
+        |> List.append [0]
+        |> List.distinct 
+        |> List.sort
 
     // Similarly, when checking if the next event can start at some time t0, in theory we need to check that the age group and 
     // proposed location resource are available at all time t such that t0 <= t < t0 + duration.
@@ -63,29 +83,66 @@ let earliestStart (alreadyScheduledEvents: ScheduledEvent list) (nextEvent:Event
     // We only need to check at those time points because they are the time points at which resource usage changes.
     // Between such time points the resource usage doesn't change, so provided we check at those time points, 
     // we can be sure that the required resources are actually available at all times within that range. 
+    let isPossible(time: Time): bool =
+        let ageGroupFree: bool = ageGroupClashes time
 
-    // TODO: add correct implementation here
-    raise (System.NotImplementedException "earliestStart")
+        let resourceFree: bool =
+            let resourcesTotal: int =
+                resourceAvailable nextEvent.location
+
+            let resourcesInUse: int =
+                allocations time
+                |> List.length
+
+            resourcesInUse < resourcesTotal
+
+        ageGroupFree && resourceFree
+
+    let earliestTime: Time = 
+        possibleStartTimes
+        |> List.find isPossible
+    
+    let allocation: Allocation = 
+        let resourcesTotal: int =
+            resourceAvailable nextEvent.location
+
+        let resourcesInUse: Allocation list =
+            allocations earliestTime
+
+        let resources = 
+            List.init resourcesTotal (fun i -> i + 1)
+            |> List.filter (fun i -> not (List.contains i resourcesInUse))
+
+        List.min resources
+
+    (earliestTime, allocation)
 
 // We schedule events one by one. At any given state we have a set of events that have already been scheduled and
 // some event that is next to be scheduled. We determine the earliest possible start time for that next event and 
 // add it to the list of scheduled events.
 let scheduleNext (alreadyScheduled: ScheduledEvent list) (nextEvent: Event): ScheduledEvent list =
-    // TODO: add correct implementation here
-    raise (System.NotImplementedException "scheduleNext")
+    let (time, allocation) = earliestStart alreadyScheduled nextEvent
+
+    [{ event = nextEvent; startTime = time; finishTime = time + nextEvent.duration; allocated = allocation }]
+    |> List.append alreadyScheduled
 
 // Given a set of events to be scheduled, we schedule them one by one, with the order of scheduling determined by the specified order array.
 // the first event to be scheduled will be events[order[0]], followed by events[order[1]], etc, until we have a completely scheduled set of events.
 let schedule (events: Event array) (order: int array) : ScheduledEvent list =
-    // TODO: add correct implementation here 
-    raise (System.NotImplementedException "schedule")
-
+    Array.fold (fun x y -> scheduleNext x events.[y]) ([]) order
+    
 // Return a cost function that we rank the fitness of a particular event scheduling order    
 let athleticsScheduleCost (events: Event array) =
     let fitnessFunction (order: int array) : double =
-        // We first schedule the events using the specified event order and then determine how long it will take to conduct all events (i.e. the finish time of the latest finishing event).
+        // We first schedule the events using the specified event order and then determine how long it will take 
+        // to conduct all events (i.e. the finish time of the latest finishing event).
         // Since for a fitness function normally produces a higher value for a better solution, we take the negative of the finish time.
         // For example, if the finish time of our latest event is 181 minutes, then our fitness function would return -181.0
-        // TODO: add correct implementation here 
-        raise (System.NotImplementedException "fitnessFunction")
+        let score (event: ScheduledEvent) =
+            float(0 - event.finishTime)
+
+        schedule events order
+        |> List.sortBy (fun e -> e.finishTime)
+        |> List.last
+        |> score
     fitnessFunction
